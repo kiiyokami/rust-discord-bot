@@ -43,7 +43,7 @@ jobs:
       with:
         host: ${{ secrets.DROPLET_IP }}
         username: root
-        password: ${{ secrets.DROPLET_PASSWORD }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd ~/discord-bot
           docker-compose pull
