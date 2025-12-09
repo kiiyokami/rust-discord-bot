@@ -46,7 +46,7 @@ jobs:
         username: root
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        source: "compose.yml,.env"
+        source: "compose.yml"
         target: "~/discord-bot"
     
     - name: Deploy to Droplet
@@ -59,6 +59,7 @@ jobs:
         script: |
           mkdir -p ~/discord-bot
           cd ~/discord-bot
-          doctl registry login
-          docker-compose pull
-          docker-compose up -d --force-recreate
+          echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" > .env
+          echo ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} | docker login registry.digitalocean.com -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} --password-stdin
+          docker compose pull
+          docker compose up -d --force-recreate
