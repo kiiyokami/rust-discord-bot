@@ -42,7 +42,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.DROPLET_IP }}
-        username: ${{ secrets.DROPLET_USERNAME }}
+        username: root
         password: ${{ secrets.DROPLET_PASSWORD }}
         script: |
           cd ~/discord-bot
