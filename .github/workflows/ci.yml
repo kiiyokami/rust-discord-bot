@@ -60,6 +60,7 @@ jobs:
           mkdir -p ~/discord-bot
           cd ~/discord-bot
           echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" > .env
+          echo "REGISTRY_NAME=${{ secrets.REGISTRY_NAME }}" >> .env
           echo ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} | docker login registry.digitalocean.com -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} --password-stdin
           docker compose pull
           docker compose up -d --force-recreate

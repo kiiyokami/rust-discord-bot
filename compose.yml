@@ -1,15 +1,9 @@
 services:
   discord-bot:
-    build: .
+    image: registry.digitalocean.com/${REGISTRY_NAME}/discord-bot:latest
     restart: unless-stopped
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
-    volumes:
-      - ./public:/app/public:ro
-    ports:
-      - "80:8080"
-    networks:
-      - bot-network
 
 networks:
   bot-network:
