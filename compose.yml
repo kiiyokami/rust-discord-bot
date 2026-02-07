@@ -1,10 +1,6 @@
 services:
   discord-bot:
-    image: registry.digitalocean.com/${REGISTRY_NAME}/discord-bot:latest
+    build: .
     restart: unless-stopped
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
-
-networks:
-  bot-network:
-    driver: bridge
