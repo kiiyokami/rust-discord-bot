@@ -4,9 +4,9 @@ pub fn get_domain_map() -> HashMap<&'static str, &'static str> {
     HashMap::from([
         ("instagram.com", "kkinstagram.com"),
         ("pixiv.net", "phixiv.net"),
-        ("x.com", "fixupx.com"),
-        ("tiktok.com", "vxtiktok.com"),
-        ("twitter.com", "fxtwitter.com"),
+        ("x.com", "cunnyx.com"),
+        ("tiktok.com", "kktiktok.com"),
+        ("twitter.com", "cunnyx.com"),
         ("reddit.com", "rxddit.com"),
         ("imgur.com", "s.imgur.com"),
         ("facebook.com", "facebed.com"),
